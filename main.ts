@@ -121,7 +121,7 @@ function gameover (text: string) {
         bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
         bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
         `)
-    game.showLongText("", DialogLayout.Bottom)
+    game.showLongText("your dumb, well you died", DialogLayout.Bottom)
     game.over(false)
 }
 let mySprite: Sprite = null
@@ -480,6 +480,13 @@ if (game.ask("Drink the iced tea", "walk 10 miles")) {
         `, SpriteKind.Player)
     game.showLongText("The dinosaur says \"give me something\"", DialogLayout.Bottom)
     if (game.ask("Give the dinosaur 2$", "Give the dinosaur iced tea")) {
-    	
+        gameover("The dinosaur eat you")
+    }
+    game.showLongText("your dead", DialogLayout.Bottom)
+    if (true) {
+        game.showLongText("sike you win", DialogLayout.Bottom)
+        game.over(true)
+    } else {
+        gameover("L")
     }
 }
